@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Middle from "./components/Middle";
+import { exercises, muscles } from "./components/Store";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+
+export default class App extends React.Component {
+  state = {
+    exercises
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <MuiThemeProvider>
+          <Header />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <Middle />
+          <Footer muscles={muscles} />
+        </MuiThemeProvider>
+      </div>
+    );
+  }
 }
-
-export default App;
